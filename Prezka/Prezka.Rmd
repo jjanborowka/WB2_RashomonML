@@ -1,6 +1,6 @@
 ---
-title: "Próbne modelowanie na bazie MIMIC"
-author: "Jan Borowski  Wolny Krzysztof  Kraszewski Konstanty"
+title: "Próbne modelowanie na bazie MIMIC-III"
+author: "Borowski Jan  Wolny Krzysztof  Kraszewski Konstanty"
 date: "18/03/2021"
 output: 
  ioslides_presentation:
@@ -11,7 +11,7 @@ output:
 
 
 ## Wybrane Dane {.smaller}
- - 3 Ramiki danych (admissions, patients ,labevents),
+ - 3 Ramki danych (admissions, patients ,labevents),
  - wybrane tylko rekordy dotyczące ostatniego pobytu w szpitalu.
  
 ```{r echo=FALSE, cache=TRUE ,fig.align='center'}
@@ -40,15 +40,15 @@ processFile("df_info.txt")
 Będziemy przewidywać zmienną hospital_expire_flag (mówi nam, czy pacjent zmarł w szpitalu).
 
 
- - Usuniecie kolumny discharge_location (przedstawia te same dane),
- - usuniecie lub agregacja kolumn z datami,
- - kodowanie label lub one-hote encoding.
+ - Usunięcie kolumny discharge_location (przedstawia te same dane),
+ - usunięcie lub agregacja kolumn z datami,
+ - kodowanie label lub one-hot encoding.
  
  
  
 ## Regresja Logistyczna
 
- - One-hote Encoding z usunięciem mniej licznych kategorii,
+ - One-hot Encoding z usunięciem mniej licznych kategorii,
  - agregacja daty do wieku pacjenta.
  
 Wynik modelu na zbiorze testowym: 
@@ -65,7 +65,7 @@ knitr::include_graphics('lo.png')
  - Label encoding,
  - usunięcie kolumn zawierających daty.
  
-Wynik i struktura modelu: 
+Struktura i wynik modelu: 
 
 
 ```{r, echo=FALSE,out.width="45%", out.height="20%",fig.cap="caption",fig.show='hold',fig.align='center'}
