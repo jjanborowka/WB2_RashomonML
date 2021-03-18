@@ -1,0 +1,76 @@
+---
+title: "Próbne modelowanie na bazie MIMIC"
+author: "Jan Borowski  Wolny Krzysztof  Kraszewski Konstanty"
+date: "18/03/2021"
+output: 
+ ioslides_presentation:
+        widescreen: true
+        
+---
+
+
+
+## Wybrane Dane {.smaller}
+ - 3 Ramiki danych (admissions, patients ,labevents),
+ - wybrane tylko rekordy dotyczące ostatniego pobytu w szpitalu.
+ 
+```{r echo=FALSE, cache=TRUE ,fig.align='center'}
+
+processFile = function(filepath) {
+  con = file(filepath, "r")
+  while ( TRUE ) {
+    line = readLines(con, n = 1)
+    if ( length(line) == 0 ) {
+      break
+    }
+    print(line)
+  }
+
+  close(con)
+}
+
+
+processFile("df_info.txt")
+
+```
+
+
+## Przygotowanie danych 
+
+Będziemy przewidywać zmienną hospital_expire_flag (mówi nam, czy pacjent zmarł w szpitalu).
+
+
+ - Usuniecie kolumny discharge_location (przedstawia te same dane),
+ - usuniecie lub agregacja kolumn z datami,
+ - kodowanie label lub one-hote encoding.
+ 
+ 
+ 
+## Regresja Logistyczna
+
+ - One-hote Encoding z usunięciem mniej licznych kategorii,
+ - agregacja daty do wieku pacjenta.
+ 
+Wynik modelu na zbiorze testowym: 
+
+
+```{r echo=FALSE,out.width="42%",fig.align='center',}
+
+knitr::include_graphics('lo.png')
+```
+
+
+## Drzewo decyzyjne  {.smaller}
+
+ - Label encoding,
+ - usunięcie kolumn zawierających daty.
+ 
+Wynik i struktura modelu: 
+
+
+```{r, echo=FALSE,out.width="45%", out.height="20%",fig.cap="caption",fig.show='hold',fig.align='center'}
+
+
+
+knitr::include_graphics(c("tree.png","tree_score.png"))
+``` 
