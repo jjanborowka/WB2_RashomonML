@@ -9,5 +9,4 @@ output: html_document
 
 The Rashomon effect was introduced to predictive modelling in [Breiman and others, 2001]. It explained the concept of the Rashomon effect, gave examples of where it can be used and the benefits that it gives. In [Fisher and others, 2019] was given more instances of Rashomon usage. The paper describes ways to use the Rashomon effect to analyse variable importance. 
 
-The development of mortality prediction models is popular in machine learning. Every created model is different when it comes to its performance and methodology. To organize recent achievements [Johnson and others, 2017] compared different models that predict mortality. They compare 38 experiments using 28 published studies and attempt to reproduce their code. The code they made is available on their Github page. 
-
+The development of mortality prediction models is popular in machine learning. Every created model is different when it comes to its performance and methodology. To organize achievements [Johnson and others, 2017] compared different models that predict mortality. They compare 38 experiments using 28 published studies and attempt to reproduce their code. The code they made is available on their Github page. 
